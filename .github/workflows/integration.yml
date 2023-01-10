@@ -31,11 +31,11 @@ jobs:
         run: |
           npm run typecheck
            echo "> Type checking passed"
-           
+
       - name: Unit test
         run: npm run test
 
-         - name: build result to slack
+      - name: build result to slack
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{job.status}}
