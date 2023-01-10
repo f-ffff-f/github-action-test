@@ -1,4 +1,4 @@
-import { add } from '@/core'
+import add from './add'
 
 describe('add', () => {
   it('add a and b', () => {
