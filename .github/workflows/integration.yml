@@ -28,8 +28,7 @@ jobs:
         run: npm run lint
 
       - name: Type check
-        run: |
-          npm run typecheck
+        run: npm run typecheck
           echo "> Type checking passed"
       - name: Unit test
         run: npm run test
