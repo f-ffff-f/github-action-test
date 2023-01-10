@@ -30,6 +30,6 @@ jobs:
       - name: Type check
         run: |
           npm run typecheck
-          echo "> Type checking passed"
+           echo "> Type checking passed"
       - name: Unit test
         run: npm run test
