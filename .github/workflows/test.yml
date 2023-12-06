@@ -1,0 +1,21 @@
+name: '[test]'
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  deploy-develop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          clean: false
+          path: '/home/dev_web/actions-runner/_work/npik_swap_frontend/npik_swap_frontend'
+
+      - name: where am i?
+        run: pwd
+
+      - name: Check GITHUB_WORKSPACE
+        run: echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
