@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           clean: false
-          path: '/home/dev_web/actions-runner/_work/npik_swap_frontend/npik_swap_frontend'
 
       - name: where am i?
         run: pwd
