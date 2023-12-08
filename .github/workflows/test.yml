@@ -1,9 +1,9 @@
-name: '[test]'
+name: '[PIK-Swap] 55번 개발 서버 배포'
 
 on:
-  push: 
-     branches:
-      - 'main'
+  push:
+    branches:
+      - 'develop'
 
 jobs:
   deploy-develop:
@@ -17,4 +17,18 @@ jobs:
         run: npm ci
 
       - name: Run build
-        run: npm run build
+        run: npm run build:standalone
+
+      - name: Change Build Directory
+        run: |
+          TARGET_DIR='.next_real'
+
+          if [ -d $TARGET_DIR ]
+          then
+            rm -rf $TARGET_DIR
+          fi
+
+          mv .next $TARGET_DIR
+
+      - name: Start or Reload Server
+        run: pm2 startOrReload ecosystem.config.js --update-env
