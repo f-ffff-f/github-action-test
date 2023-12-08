@@ -18,6 +18,3 @@ jobs:
 
       - name: Run build
         run: npm run build
-
-      - name: Start or Reload Server
-        run: pm2 startOrReload ecosystem.config.js --update-env
