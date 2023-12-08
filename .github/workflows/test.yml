@@ -17,18 +17,7 @@ jobs:
         run: npm ci
 
       - name: Run build
-        run: npm run build:standalone
-
-      - name: Change Build Directory
-        run: |
-          TARGET_DIR='.next_real'
-
-          if [ -d $TARGET_DIR ]
-          then
-            rm -rf $TARGET_DIR
-          fi
-
-          mv .next $TARGET_DIR
+        run: npm run build
 
       - name: Start or Reload Server
         run: pm2 startOrReload ecosystem.config.js --update-env
