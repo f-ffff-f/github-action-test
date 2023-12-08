@@ -9,6 +9,13 @@ jobs:
   deploy-develop:
     runs-on: self-hosted
     steps:
+      - name: 'Cleanup build folder'
+        run: |
+          ls -la ./
+          rm -rf ./* || true
+          rm -rf ./.??* || true
+          ls -la ./
+          
       - uses: actions/checkout@v2
         with:
           clean: false
