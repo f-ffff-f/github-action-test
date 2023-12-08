@@ -16,7 +16,7 @@ jobs:
         run: pwd
 
       - name: hi?
-        run: echo "hehe"
+        run: echo "예상: 18.0.4에서 실패함"
 
       - name: Check GITHUB_WORKSPACE
         run: echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
